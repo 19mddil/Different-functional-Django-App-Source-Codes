@@ -4,3 +4,4 @@ It was done by me to get four certificates from University of Michigan about Dja
 It wasn't easy to complete took me some time though I could have ended it sooner.
 Whatever,  
 If you know django you know How to run it in venv or pipenv shell :).
+project folder is `mysite/`
