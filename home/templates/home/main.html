@@ -5,9 +5,62 @@
     <title>{{ settings.APP_NAME }}</title>
 </head>
 <body>
-    <h1>Welcome to {{ settings.APP_NAME }}</h1>
+	<h1>Welcome to the All Samples Of Code</h1>
+	<p>The Details of critical Opperations are tried to be explained in README.md</p>
     <p>
-    Hello world.
+    	Here are the samples (Each will open in a new tab):
+	    <ul>
+	    		<li>
+	    			<a href="ads" target="_blank">Ads</a> - CRUD application,Search Box Ajax implementation for searching Database without page refreshing,Owning rows in a model,Many to many comment and Many to one models / SQL - uses the django shell example,Favorite / Unfavourite Ads(Jquery implementation),Storing small images in the database,Many to one models
+	        </li>
+	        <li><a href="hello" target="_blank">hello</a> - Playing with Session and browser Cookie(Refresh browser to see how count increments using session[use developer console])</li>
+	        <li><a href="cats" target="_blank">cats</a> - CRUD application</li>
+	        <li><a href="autos" target="_blank">autos</a> - Autos CRUD,Many to one models,Understanding how the generic views work</li>
+	        <li> Also you can run <code>python3 manage.py runscript many_load</code> to run <a href="https://raw.githubusercontent.com/19mddil/Different-functional-Django-App-Source-Codes/main/scripts/many_load.py" >a auto data modelling script</a> to load data from a <a href="https://raw.githubusercontent.com/19mddil/Different-functional-Django-App-Source-Codes/main/unesco/load.csv" download>unesco world heritage csv</a> file into <a href="https://raw.githubusercontent.com/19mddil/Different-functional-Django-App-Source-Codes/main/unesco/models.py">unesco app data modelling database</a> where four one to many data relation is made to do normal form of scattered data of sites in csv file to avoid string repetations.
+	        	<ul>
+	        		<li>For this operation you need to use your command shell</li>
+	        		<li>Run <code>python3 manage.py runscript many_load</code> To load the data into the database</li>
+	        		<li>Then Run these commnads
+	        			<pre>
+$ sqlite3 db.sqlite3
+SQLite version 3.24.0 2018-06-04 14:10:15
+Enter ".help" for usage hints.
+sqlite> SELECT count(id) FROM unesco_states;
+163
+sqlite> SELECT count(id) FROM unesco_site;
+1044
+sqlite> SELECT count(id) FROM unesco_states where name="India";
+1
+sqlite> SELECT count(id) FROM unesco_site WHERE name="Hawaii Volcanoes National Park" AND year=1987 AND area_hectares = 87940.0;
+1
+sqlite> SELECT COUNT(*) FROM unesco_site JOIN unesco_iso ON iso_id=unesco_iso.id WHERE unesco_site.name="Maritime Greenwich" AND unesco_iso.name = "gb";
+1
+sqlite>
+	        			</pre>
+	        			If the numbers are accurate no harm is done.
+	        		</li>
+
+	        	</ul></li>
+	    </ul>
+<p>
+{% if user.is_authenticated %}
+<p>Authenticated as
+<pre>
+Name: {{ user.get_full_name }}
+Email: {{ user.email }}
+Id: {{ user.id }}
+<!-- https://stackoverflow.com/questions/26879011/check-if-current-user-is-logged-in-using-any-django-social-auth-provider -->
+Type: {% if backends.associated %} GitHub {% else %} Local {% endif %}
+</pre>
+</p>
+<p>You can <a href="/accounts/logout">Logout</a></p>
+{% else %}
+<p>You can <a href="/accounts/login">Login</a> if you like.</p>
+{% endif %}
+</p>
+<p>This sample code is available at
+    <a href="https://github.com/19mddil/Different-functional-Django-App-Source-Codes" target="_blank">
+    View Sources</a>
     </p>
 </body>
 </html>
