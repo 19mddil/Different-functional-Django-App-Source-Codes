@@ -16,7 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Used for a default title
-APP_NAME = 'ChucksList'   # Add
+APP_NAME = 'Various Functional Django Apps'   # Add
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -40,15 +40,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
 
-    # Extensions - installed with pip3 / requirements.txt
+    # 3rd Party Extensions - installed with pipenv install -r requirements.txt
     'django_extensions',
     'crispy_forms',
     'rest_framework',
     'social_django',
-    'home.apps.HomeConfig',
 
+    #Local Appss
+    'home.apps.HomeConfig',
     'ads.apps.AdsConfig',
-    #'unesco.apps.UnescoConfig',
+    'autos.apps.AutosConfig',
+    'cats.apps.CatsConfig',
+    'hello.apps.HelloConfig',
+    'unesco.apps.UnescoConfig',
 
 ]
 
