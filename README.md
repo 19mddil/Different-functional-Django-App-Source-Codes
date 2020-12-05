@@ -20,3 +20,12 @@ python3 manage.py createsuperuser
 ```
 The view of the project is
 ![project home page](/doc-images/home.png)
+The view of running script to load scattered data from [unesco world heritage site csv file](https://raw.githubusercontent.com/19mddil/Different-functional-Django-App-Source-Codes/main/unesco/load.csv)
+![view of script run](/doc-images/sr.png)
+View of Ads App
+![Ads](/doc-images/adds.png)
+View of Cat App
+![Cats](/doc-images/cats.png)
+View of Login with Github
+![github login](/doc-images/git.png)
+And more... Run to see :).
